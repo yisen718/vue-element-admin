@@ -1,6 +1,12 @@
 <template>
-  <div id="tags-view-container" class="tags-view-container">
-    <scroll-pane ref="scrollPane" class="tags-view-wrapper">
+  <div
+    id="tags-view-container"
+    class="tags-view-container"
+  >
+    <scroll-pane
+      ref="scrollPane"
+      class="tags-view-wrapper"
+    >
       <router-link
         v-for="tag in visitedViews"
         ref="tag"
@@ -13,12 +19,23 @@
         @contextmenu.prevent.native="openMenu(tag,$event)"
       >
         {{ tag.title }}
-        <span v-if="!tag.meta.affix" class="el-icon-close" @click.prevent.stop="closeSelectedTag(tag)"/>
+        <span
+          v-if="!tag.meta.affix"
+          class="el-icon-close"
+          @click.prevent.stop="closeSelectedTag(tag)"
+        />
       </router-link>
     </scroll-pane>
-    <ul v-show="visible" :style="{left:left+'px',top:top+'px'}" class="contextmenu">
+    <ul
+      v-show="visible"
+      :style="{left:left+'px',top:top+'px'}"
+      class="contextmenu"
+    >
       <li @click="refreshSelectedTag(selectedTag)">Refresh</li>
-      <li v-if="!(selectedTag.meta&&selectedTag.meta.affix)" @click="closeSelectedTag(selectedTag)">Close</li>
+      <li
+        v-if="!(selectedTag.meta&&selectedTag.meta.affix)"
+        @click="closeSelectedTag(selectedTag)"
+      >Close</li>
       <li @click="closeOthersTags">Close Others</li>
       <li @click="closeAllTags(selectedTag)">Close All</li>
     </ul>
@@ -204,7 +221,7 @@ export default {
       height: 30px;
       line-height: 26px;
       border-radius: 5px 5px 0 0;
-      box-shadow: 2px 0.5px 2px 1px #eee;
+      box-shadow: 0.5px 0.2px 2px 1px #eee;
       color: #495060;
       background: #fff;
       padding: 2px 10px;
@@ -235,7 +252,7 @@ export default {
     font-size: 12px;
     font-weight: 400;
     color: #333;
-    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, .3);
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);
     li {
       margin: 0;
       padding: 7px 16px;
@@ -255,13 +272,13 @@ export default {
     .el-icon-close {
       width: 16px;
       height: 16px;
-      vertical-align: 2px;
+      vertical-align: 3px;
       border-radius: 50%;
       text-align: center;
-      transition: all .3s cubic-bezier(.645, .045, .355, 1);
+      transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
       transform-origin: 100% 50%;
       &:before {
-        transform: scale(.6);
+        transform: scale(0.6);
         display: inline-block;
         vertical-align: -3px;
       }

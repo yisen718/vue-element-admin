@@ -1,10 +1,20 @@
 <template>
-  <div :class="classObj" class="app-wrapper">
-    <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside"/>
+  <div
+    :class="classObj"
+    class="app-wrapper"
+  >
+    <div
+      v-if="device==='mobile'&&sidebar.opened"
+      class="drawer-bg"
+      @click="handleClickOutside"
+    />
+    <navbar/>
     <sidebar class="sidebar-container"/>
-    <div :class="{hasTagsView:needTagsView}" class="main-container">
+    <div
+      :class="{hasTagsView:needTagsView}"
+      class="body-container"
+    >
       <div :class="{'fixed-header':fixedHeader}">
-        <navbar/>
         <tags-view v-if="needTagsView"/>
       </div>
       <app-main/>
@@ -71,6 +81,15 @@ export default {
     position: fixed;
     top: 0;
   }
+}
+
+.body-container {
+  min-height: 100%;
+  /* -webkit-transition: margin-left .28s; */
+  transition: margin-left 0.28s;
+  margin-left: 210px;
+  position: relative;
+  top: 100px;
 }
 
 .drawer-bg {
