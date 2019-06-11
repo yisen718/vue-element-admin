@@ -4,18 +4,22 @@
       class="document-btn"
       target="_blank"
       href="https://panjiachen.github.io/vue-element-admin-site/"
-    >Documentation</a>
+    >文档</a>
     <a
       class="document-btn"
       target="_blank"
       href="https://github.com/PanJiaChen/vue-element-admin/"
-    >Github Repository</a>
+    >Github仓库</a>
     <a
       class="document-btn"
       target="_blank"
       href="https://panjiachen.gitee.io/vue-element-admin-site/zh/"
     >国内文档</a>
-    <dropdown-menu :items="articleList" style="float:left;margin-left:50px;" title="系列文章" />
+    <dropdown-menu
+      :items="articleList"
+      style="float:left;margin-left:50px;"
+      title="系列文章"
+    />
   </div>
 </template>
 

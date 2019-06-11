@@ -14,7 +14,7 @@ export const constantRoutes = [
   },
   {
     path: '/login',
-    component: 'views/login/index',
+    component: 'views/login/login',
     hidden: true
   },
   {
@@ -364,7 +364,7 @@ export const asyncRoutes = [
     redirect: 'noRedirect',
     name: 'ErrorPages',
     meta: {
-      title: 'Error Pages',
+      title: '错误页',
       icon: '404'
     },
     children: [
