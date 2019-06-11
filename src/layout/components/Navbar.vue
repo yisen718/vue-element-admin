@@ -1,41 +1,71 @@
 <template>
   <div class="navbar">
-    <div id="my-logo">sometext</div>
+    <div id="my-logo">
+      <img src="https://ws1.sinaimg.cn/large/e2e8c406gy1g3x2owic05j202m02ma9z.jpg">
+    </div>
     <!-- <breadcrumb id="breadcrumb-container" class="breadcrumb-container"/> -->
 
     <div class="right-menu">
       <template v-if="device!=='mobile'">
-        <search id="header-search" class="right-menu-item"/>
+        <search
+          id="header-search"
+          class="right-menu-item"
+        />
 
         <error-log class="errLog-container right-menu-item hover-effect"/>
 
-        <screenfull id="screenfull" class="right-menu-item hover-effect"/>
+        <screenfull
+          id="screenfull"
+          class="right-menu-item hover-effect"
+        />
 
-        <el-tooltip content="Global Size" effect="dark" placement="bottom">
-          <size-select id="size-select" class="right-menu-item hover-effect"/>
+        <el-tooltip
+          content="Global Size"
+          effect="dark"
+          placement="bottom"
+        >
+          <size-select
+            id="size-select"
+            class="right-menu-item hover-effect"
+          />
         </el-tooltip>
       </template>
 
-      <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
+      <el-dropdown
+        class="avatar-container right-menu-item hover-effect"
+        trigger="click"
+      >
         <div class="avatar-wrapper">
-          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
+          <img
+            :src="avatar+'?imageView2/1/w/80/h/80'"
+            class="user-avatar"
+          >
           <i class="el-icon-caret-bottom"/>
         </div>
         <el-dropdown-menu slot="dropdown">
           <router-link to="/profile/index">
-            <el-dropdown-item>Profile</el-dropdown-item>
+            <el-dropdown-item>简介</el-dropdown-item>
           </router-link>
           <router-link to="/">
-            <el-dropdown-item>Dashboard</el-dropdown-item>
+            <el-dropdown-item>主页</el-dropdown-item>
           </router-link>
-          <a target="_blank" href="https://github.com/PanJiaChen/vue-element-admin/">
+          <a
+            target="_blank"
+            href="https://github.com/PanJiaChen/vue-element-admin/"
+          >
             <el-dropdown-item>Github</el-dropdown-item>
           </a>
-          <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">
-            <el-dropdown-item>Docs</el-dropdown-item>
+          <a
+            target="_blank"
+            href="https://panjiachen.github.io/vue-element-admin-site/#/"
+          >
+            <el-dropdown-item>文档</el-dropdown-item>
           </a>
           <el-dropdown-item divided>
-            <span style="display:block;" @click="logout">Log Out</span>
+            <span
+              style="display:block;"
+              @click="logout"
+            >退出登陆</span>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -98,8 +128,14 @@ export default {
   justify-content: space-between;
   flex-wrap: nowrap;
 
-  .my-logo {
-    position: fixed;
+  #my-logo {
+    margin: 5px;
+    margin-left: 20px;
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+    }
   }
 
   // .hamburger-container {

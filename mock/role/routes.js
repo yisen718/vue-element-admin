@@ -41,7 +41,7 @@ export const constantRoutes = [
         path: 'dashboard',
         component: 'views/dashboard/index',
         name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        meta: { title: '主页', icon: 'dashboard', affix: true }
       }
     ]
   },
@@ -53,7 +53,7 @@ export const constantRoutes = [
         path: 'index',
         component: 'views/documentation/index',
         name: 'Documentation',
-        meta: { title: 'Documentation', icon: 'documentation', affix: true }
+        meta: { title: '文档', icon: 'documentation', affix: true }
       }
     ]
   },
@@ -66,7 +66,7 @@ export const constantRoutes = [
         path: 'index',
         component: 'views/guide/index',
         name: 'Guide',
-        meta: { title: 'Guide', icon: 'guide', noCache: true }
+        meta: { title: '教程', icon: 'guide', noCache: true }
       }
     ]
   }
@@ -79,7 +79,7 @@ export const asyncRoutes = [
     redirect: '/permission/index',
     alwaysShow: true,
     meta: {
-      title: 'Permission',
+      title: '权限',
       icon: 'lock',
       roles: ['admin', 'editor']
     },
@@ -89,7 +89,7 @@ export const asyncRoutes = [
         component: 'views/permission/page',
         name: 'PagePermission',
         meta: {
-          title: 'Page Permission',
+          title: '页面权限',
           roles: ['admin']
         }
       },
@@ -121,7 +121,7 @@ export const asyncRoutes = [
         path: 'index',
         component: 'views/icons/index',
         name: 'Icons',
-        meta: { title: 'Icons', icon: 'icon', noCache: true }
+        meta: { title: '图标', icon: 'icon', noCache: true }
       }
     ]
   },
@@ -132,7 +132,7 @@ export const asyncRoutes = [
     redirect: 'noRedirect',
     name: 'ComponentDemo',
     meta: {
-      title: 'Components',
+      title: '组件',
       icon: 'component'
     },
     children: [
@@ -146,13 +146,13 @@ export const asyncRoutes = [
         path: 'markdown',
         component: 'views/components-demo/markdown',
         name: 'MarkdownDemo',
-        meta: { title: 'Markdown' }
+        meta: { title: 'MarkDown编辑器' }
       },
       {
         path: 'json-editor',
         component: 'views/components-demo/json-editor',
         name: 'JsonEditorDemo',
-        meta: { title: 'Json Editor' }
+        meta: { title: 'JSON编辑器' }
       },
       {
         path: 'split-pane',
