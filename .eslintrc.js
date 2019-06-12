@@ -25,12 +25,6 @@ module.exports = {
       }
     ],
     "prettier/prettier": "off",
-    "vue/html-closing-bracket-spacing": [
-      "error",
-      {
-        selfClosingTag: "never"
-      }
-    ],
     "vue/singleline-html-element-content-newline": "off",
     "vue/multiline-html-element-content-newline": "off",
     "vue/name-property-casing": ["error", "PascalCase"],
@@ -197,6 +191,15 @@ module.exports = {
         args: "none"
       }
     ],
+    "vue/html-self-closing": ["error", {
+      "html": {
+        "void": "allow",
+        "normal": "allow",
+        "component": "allow"
+      },
+      "svg": "never",
+      "math": "always"
+    }],
     "no-useless-call": 2,
     "no-useless-computed-key": 2,
     "no-useless-constructor": 2,
@@ -237,7 +240,6 @@ module.exports = {
       }
     ],
     "space-before-blocks": [2, "always"],
-    "space-before-function-paren": [2, "never"],
     "space-in-parens": [2, "never"],
     "space-infix-ops": 2,
     "space-unary-ops": [

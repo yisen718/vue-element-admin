@@ -1,543 +1,338 @@
 <template>
-  <div class="container">
-    <div
-      id="overlay"
-      class="overlay"
-    >
-      <div
-        id="sign-in"
-        class="sign-in"
-      >
-        <h1>欢迎回来！</h1>
-        <p>To keep connected with us please login with your personal info</p>
-        <button
-          id="slide-right-button"
-          class="switch-button"
-        >Sign In</button>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="block">
+        <el-carousel height="625px">
+          <el-carousel-item v-for="item in 4" :key="item"> </el-carousel-item>
+        </el-carousel>
       </div>
 
-      <div
-        id="sign-up"
-        class="sign-up"
-      >
-        <h1>Hello, Friend!</h1>
-        <p>Enter your personal details and start a journey with us</p>
-        <button
-          id="slide-left-button"
-          class="switch-button"
-        >Sign Up</button>
-      </div>
-    </div>
+      <div class="login-form">
+        <div class="title">
+          <img
+            src="https://www.bookln.cn/home/assets/img/common/new-logo.png"
+            alt=""
+          />
+        </div>
 
-    <div class="form">
-      <div
-        id="sign-in-info"
-        class="sign-in"
-      >
-        <h1>Sign In</h1>
-        <div class="social-media-buttons">
-          <div class="icon">
-            <svg viewBox="0 0 24 24">
-              <path
-                fill="#000000"
-                d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"
-              />
-            </svg>
-          </div>
-          <div class="icon">
-            <svg viewBox="0 0 24 24">
-              <path
-                fill="#000000"
-                d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"
-              />
-            </svg>
-          </div>
-          <div class="icon">
-            <svg viewBox="0 0 24 24">
-              <path
-                fill="#000000"
-                d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z"
-              />
-            </svg>
-          </div>
+        <div class="third-login">
+          <div class="login-name">第三方登陆</div>
+          <svg-icon icon-class="wechat" />
+          <svg-icon icon-class="qq" />
         </div>
-        <p class="small">or use your email account:</p>
-        <form id="sign-in-form">
-          <input
-            type="email"
-            placeholder="Email"
-          >
-          <input
-            type="password"
-            placeholder="Password"
-          >
-          <p class="forgot-password">Forgot your password?</p>
-          <button class="control-button in">Sign In</button>
-        </form>
-      </div>
-      <div
-        id="sign-up-info"
-        class="sign-up"
-      >
-        <h1>Create Account</h1>
-        <div class="social-media-buttons">
-          <div class="icon">
-            <svg viewBox="0 0 24 24">
-              <path
-                fill="#000000"
-                d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"
-              />
-            </svg>
-          </div>
-          <div class="icon">
-            <svg viewBox="0 0 24 24">
-              <path
-                fill="#000000"
-                d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"
-              />
-            </svg>
-          </div>
-          <div class="icon">
-            <svg viewBox="0 0 24 24">
-              <path
-                fill="#000000"
-                d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z"
-              />
-            </svg>
-          </div>
+
+        <div class="account-login">
+          <label class="form" for="username">用户名</label>
+          <input id="username" v-model="loginForm.username" type="text" />
+          <div class="bottom-line" style="width: 0px;"></div>
+          <label class="form" for="password">密码</label>
+          <input id="password" v-model="loginForm.password" type="password" />
+          <div class="bottom-line" style="width: 0px;"></div>
         </div>
-        <p class="small">or use your email for registration:</p>
-        <form id="sign-up-form">
-          <input
-            type="text"
-            placeholder="Name"
-          >
-          <input
-            type="email"
-            placeholder="Email"
-          >
-          <input
-            type="password"
-            placeholder="Password"
-          >
-          <button class="control-button up">Sign Up</button>
-        </form>
+
+        <div class="login">
+          <el-checkbox v-model="checked" class="remember">记住密码</el-checkbox>
+          <el-button class="login-button" type="primary">登陆</el-button>
+        </div>
+
+        <div class="forgot">
+          忘记密码?
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<style>
-:root {
-  --form-height: 550px;
-  --form-width: 900px;
-  /*  Sea Green */
-  --left-color: #9fdeaf;
-  /*  Light Blue  */
-  --right-color: #96dbe2;
-}
+<script>
+import { validUsername } from '@/utils/validate'
+// import SocialSign from './components/SocialSignin'
 
-body,
-html {
+export default {
+  name: 'Login',
+  // components: { SocialSign },
+  data() {
+    const validateUsername = (rule, value, callback) => {
+      if (!validUsername(value)) {
+        callback(new Error('Please enter the correct user name'))
+      } else {
+        callback()
+      }
+    }
+    const validatePassword = (rule, value, callback) => {
+      if (value.length < 6) {
+        callback(new Error('The password can not be less than 6 digits'))
+      } else {
+        callback()
+      }
+    }
+    return {
+      loginForm: {
+        username: null,
+        password: null
+      },
+
+      checked: false,
+
+      loginRules: {
+        username: [{ required: true, trigger: 'blur', validator: validateUsername }],
+        password: [{ required: true, trigger: 'blur', validator: validatePassword }]
+      },
+
+      passwordType: 'password',
+      capsTooltip: false,
+      loading: false,
+      showDialog: false,
+      redirect: undefined,
+      otherQuery: {}
+    }
+  },
+
+  watch: {
+    $route: {
+      handler: function (route) {
+        const query = route.query
+        if (query) {
+          this.redirect = query.redirect
+          this.otherQuery = this.getOtherQuery(query)
+        }
+      },
+      immediate: true
+    }
+  },
+
+  mounted() {
+    if (this.loginForm.username === '') {
+      this.$refs.username.focus()
+    } else if (this.loginForm.password === '') {
+      this.$refs.password.focus()
+    }
+  },
+
+  methods: {
+    checkCapslock({ shiftKey, key } = {}) {
+      if (key && key.length === 1) {
+        if (shiftKey && (key >= 'a' && key <= 'z') || !shiftKey && (key >= 'A' && key <= 'Z')) {
+          this.capsTooltip = true
+        } else {
+          this.capsTooltip = false
+        }
+      }
+      if (key === 'CapsLock' && this.capsTooltip === true) {
+        this.capsTooltip = false
+      }
+    },
+
+    showPwd() {
+      if (this.passwordType === 'password') {
+        this.passwordType = ''
+      } else {
+        this.passwordType = 'password'
+      }
+      this.$nextTick(() => {
+        this.$refs.password.focus()
+      })
+    },
+
+    handleLogin() {
+      this.$refs.loginForm.validate(valid => {
+        if (valid) {
+          this.loading = true
+          this.$store.dispatch('user/login', this.loginForm)
+            .then(() => {
+              this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
+              this.loading = false
+            })
+            .catch(() => {
+              this.loading = false
+            })
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      })
+    },
+
+    getOtherQuery(query) {
+      return Object.keys(query).reduce((acc, cur) => {
+        if (cur !== 'redirect') {
+          acc[cur] = query[cur]
+        }
+        return acc
+      }, {})
+    }
+    // afterQRScan() {
+    //   if (e.key === 'x-admin-oauth-code') {
+    //     const code = getQueryObject(e.newValue)
+    //     const codeMap = {
+    //       wechat: 'code',
+    //       tencent: 'code'
+    //     }
+    //     const type = codeMap[this.auth_type]
+    //     const codeName = code[type]
+    //     if (codeName) {
+    //       this.$store.dispatch('LoginByThirdparty', codeName).then(() => {
+    //         this.$router.push({ path: this.redirect || '/' })
+    //       })
+    //     } else {
+    //       alert('第三方登录失败')
+    //     }
+    //   }
+    // }
+  }
+
+}
+</script>
+
+<style lang="scss">
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  margin: 0;
-  font-family: "Helvetica Neue", sans-serif;
-  letter-spacing: 0.5px;
+
+  .login-card {
+    width: 60%;
+    height: 625px;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 65% 35%;
+    grid-template-areas: "block form";
+    box-shadow: 5px 10px 40px #d3dce6;
+
+    .login-form {
+      grid-area: form;
+      width: 40%;
+      height: 100%;
+      margin: 20px;
+      display: grid;
+      grid-template-rows: 10% 10% 20% 20% 10% 20% 10%;
+      grid-template-areas: "." "title" "third" "input" "login" "forgot" ".";
+      .title {
+        grid-area: title;
+        margin: auto;
+        img {
+          width: 120px;
+          margin-bottom: 45px;
+          vertical-align: middle;
+          max-width: 100%;
+        }
+      }
+
+      .login {
+        grid-area: login;
+        margin-left: 20px;
+        .remember {
+          width: 100%;
+          text-align: left;
+          color: gray;
+          font-weight: 200;
+          margin: 5px 0 0 0;
+        }
+
+        .login-button {
+          width: 93%;
+          margin-top: 20px;
+          margin-bottom: 10px;
+          height: 35px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+
+      .third-login {
+        grid-area: third;
+        margin: auto;
+        .login-name {
+          text-align: center;
+        }
+        svg {
+          width: 40px;
+          height: 40px;
+          margin: 10px;
+        }
+      }
+
+      .account-login {
+        grid-area: input;
+      }
+
+      .forgot {
+        text-align: right;
+        grid-area: forgot;
+        margin: 20px;
+        margin-top: 30px;
+        font-size: 10pt;
+        color: #46a6ff;
+        font-weight: 200;
+        text-decoration: underline;
+      }
+    }
+
+    .block {
+      grid-area: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
-.container {
-  width: var(--form-width);
-  height: var(--form-height);
+input {
+  font-size: 16px !important;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: #333;
+  line-height: 24px;
+  outline: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #eaeaea !important;
+  border-radius: 0 !important;
+  padding: 5px 0px !important;
+  width: 250px;
+  margin: 0 20px;
+}
+
+input:focus {
+  // border-bottom: 1px solid #1890ff !important;
+}
+
+.bottom-line {
+  width: 250px;
   position: relative;
-  margin: auto;
-  box-shadow: 2px 10px 40px rgba(22, 20, 19, 0.4);
-  border-radius: 10px;
-  margin-top: 50px;
-}
-/*
-----------------------
-      Overlay
-----------------------
-*/
-.overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 100;
-  background-image: linear-gradient(
-    to right,
-    var(--left-color),
-    var(--right-color)
-  );
-  border-radius: 10px;
-  color: white;
-  clip: rect(0, 385px, var(--form-height), 0);
+  width: 0;
+  height: 1px;
+  left: 20px;
+  background-color: #48abff;
 }
 
-.open-sign-up {
-  animation: slideleft 1s linear forwards;
-}
-
-.open-sign-in {
-  animation: slideright 1s linear forwards;
-}
-
-.overlay .sign-in,
-.overlay .sign-up {
-  /*  Width is 385px - padding  */
-  --padding: 50px;
-  width: calc(385px - var(--padding) * 2);
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px var(--padding);
-  text-align: center;
-}
-
-.overlay .sign-in {
-  float: left;
-}
-
-.overlay-text-left-animation {
-  animation: text-slide-in-left 1s linear;
-}
-.overlay-text-left-animation-out {
-  animation: text-slide-out-left 1s linear;
-}
-
-.overlay .sign-up {
-  float: right;
-}
-
-.overlay-text-right-animation {
-  animation: text-slide-in-right 1s linear;
-}
-
-.overlay-text-right-animation-out {
-  animation: text-slide-out-right 1s linear;
-}
-
-.overlay h1 {
-  margin: 0px 5px;
-  font-size: 2.1rem;
-}
-
-.overlay p {
-  margin: 20px 0px 30px;
-  font-weight: 200;
-}
-/*
-------------------------
-      Buttons
-------------------------
-*/
-.switch-button,
-.control-button {
-  cursor: pointer;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 140px;
-  height: 40px;
-  font-size: 14px;
-  text-transform: uppercase;
-  background: none;
-  border-radius: 20px;
-  color: white;
-}
-
-.switch-button {
-  border: 2px solid;
-}
-
-.control-button {
-  border: none;
-  margin-top: 15px;
-}
-
-.switch-button:focus,
-.control-button:focus {
-  outline: none;
-}
-
-.control-button.up {
-  background-color: var(--left-color);
-}
-
-.control-button.in {
-  background-color: var(--right-color);
-}
-
-/*
---------------------------
-      Forms
---------------------------
-*/
 .form {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-radius: 10px;
-}
-
-.form .sign-in,
-.form .sign-up {
-  --padding: 50px;
-  position: absolute;
-  /*  Width is 100% - 385px - padding  */
-  width: calc(var(--form-width) - 385px - var(--padding) * 2);
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px var(--padding);
-  text-align: center;
-}
-
-/* Sign in is initially not displayed */
-.form .sign-in {
-  display: none;
-}
-
-.form .sign-in {
-  left: 0;
-}
-
-.form .sign-up {
-  right: 0;
-}
-
-.form-right-slide-in {
-  animation: form-slide-in-right 1s;
-}
-
-.form-right-slide-out {
-  animation: form-slide-out-right 1s;
-}
-
-.form-left-slide-in {
-  animation: form-slide-in-left 1s;
-}
-
-.form-left-slide-out {
-  animation: form-slide-out-left 1s;
-}
-
-.form .sign-in h1 {
-  color: var(--right-color);
-  margin: 0;
-}
-
-.form .sign-up h1 {
-  color: var(--left-color);
-  margin: 0;
-}
-
-.social-media-buttons {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 15px;
-}
-
-.social-media-buttons .icon {
-  width: 40px;
-  height: 40px;
-  border: 1px solid #dadada;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 7px;
-}
-
-.small {
   font-size: 13px;
-  color: grey;
-  font-weight: 200;
-  margin: 5px;
+  position: relative;
+  left: 20px;
+  top: 27px;
+  color: #999;
+  line-height: 21px;
+  font-weight: 400;
+  margin-left: 0;
 }
 
-.social-media-buttons .icon svg {
-  width: 25px;
-  height: 25px;
-}
-
-#sign-in-form input,
-#sign-up-form input {
-  margin: 12px;
+.el-carousel__item h3 {
+  color: #475669;
   font-size: 14px;
-  padding: 15px;
-  width: 260px;
-  font-weight: 300;
+  opacity: 0.75;
+  margin: 0;
+}
+
+.el-input {
   border: none;
-  background-color: #e4e4e494;
-  font-family: "Helvetica Neue", sans-serif;
-  letter-spacing: 1.5px;
-  padding-left: 20px;
 }
 
-#sign-in-form input::placeholder {
-  letter-spacing: 1px;
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
 }
 
-.forgot-password {
-  font-size: 12px;
-  display: inline-block;
-  border-bottom: 2px solid #efebeb;
-  padding-bottom: 3px;
-}
-
-.forgot-password:hover {
-  cursor: pointer;
-}
-
-/*
----------------------------
-    Animation
----------------------------
-*/
-@keyframes slideright {
-  0% {
-    clip: rect(0, 385px, var(--form-height), 0);
-  }
-  30% {
-    clip: rect(0, 480px, var(--form-height), 0);
-  }
-  /*  we want the width to be slightly larger here  */
-  50% {
-    clip: rect(
-      0px,
-      calc(var(--form-width) / 2 + 480px / 2),
-      var(--form-height),
-      calc(var(--form-width) / 2 - 480px / 2)
-    );
-  }
-  80% {
-    clip: rect(
-      0px,
-      var(--form-width),
-      var(--form-height),
-      calc(var(--form-width) - 480px)
-    );
-  }
-  100% {
-    clip: rect(
-      0px,
-      var(--form-width),
-      var(--form-height),
-      calc(var(--form-width) - 385px)
-    );
-  }
-}
-
-@keyframes slideleft {
-  100% {
-    clip: rect(0, 385px, var(--form-height), 0);
-  }
-  70% {
-    clip: rect(0, 480px, var(--form-height), 0);
-  }
-  /*  we want the width to be slightly larger here  */
-  50% {
-    clip: rect(
-      0px,
-      calc(var(--form-width) / 2 + 480px / 2),
-      var(--form-height),
-      calc(var(--form-width) / 2 - 480px / 2)
-    );
-  }
-  30% {
-    clip: rect(
-      0px,
-      var(--form-width),
-      var(--form-height),
-      calc(var(--form-width) - 480px)
-    );
-  }
-  0% {
-    clip: rect(
-      0px,
-      var(--form-width),
-      var(--form-height),
-      calc(var(--form-width) - 385px)
-    );
-  }
-}
-
-@keyframes text-slide-in-left {
-  0% {
-    padding-left: 20px;
-  }
-  100% {
-    padding-left: 50px;
-  }
-}
-
-@keyframes text-slide-in-right {
-  0% {
-    padding-right: 20px;
-  }
-  100% {
-    padding-right: 50px;
-  }
-}
-
-@keyframes text-slide-out-left {
-  0% {
-    padding-left: 50px;
-  }
-  100% {
-    padding-left: 20px;
-  }
-}
-
-@keyframes text-slide-out-right {
-  0% {
-    padding-right: 50px;
-  }
-  100% {
-    padding-right: 20px;
-  }
-}
-
-@keyframes form-slide-in-right {
-  0% {
-    padding-right: 100px;
-  }
-  100% {
-    padding-right: 50px;
-  }
-}
-
-@keyframes form-slide-in-left {
-  0% {
-    padding-left: 100px;
-  }
-  100% {
-    padding-left: 50px;
-  }
-}
-
-@keyframes form-slide-out-right {
-  0% {
-    padding-right: 50px;
-  }
-  100% {
-    padding-right: 80px;
-  }
-}
-
-@keyframes form-slide-out-left {
-  0% {
-    padding-left: 50px;
-  }
-  100% {
-    padding-left: 80px;
-  }
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
 }
 </style>
