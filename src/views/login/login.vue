@@ -3,16 +3,13 @@
     <div class="login-card">
       <div class="block">
         <el-carousel height="625px">
-          <el-carousel-item v-for="item in 4" :key="item"> </el-carousel-item>
+          <el-carousel-item v-for="item in 4" :key="item"></el-carousel-item>
         </el-carousel>
       </div>
 
       <div class="login-form">
         <div class="title">
-          <img
-            src="https://www.bookln.cn/home/assets/img/common/new-logo.png"
-            alt=""
-          />
+          <img src="https://www.bookln.cn/home/assets/img/common/new-logo.png" alt>
         </div>
 
         <div class="third-login">
@@ -23,10 +20,10 @@
 
         <div class="account-login">
           <label class="form" for="username">用户名</label>
-          <input id="username" v-model="loginForm.username" type="text" />
+          <input id="username" v-model="loginForm.username" type="text">
           <div class="bottom-line" style="width: 0px;"></div>
           <label class="form" for="password">密码</label>
-          <input id="password" v-model="loginForm.password" type="password" />
+          <input id="password" v-model="loginForm.password" type="password">
           <div class="bottom-line" style="width: 0px;"></div>
         </div>
 
@@ -35,9 +32,7 @@
           <el-button class="login-button" type="primary">登陆</el-button>
         </div>
 
-        <div class="forgot">
-          忘记密码?
-        </div>
+        <div class="forgot">忘记密码?</div>
       </div>
     </div>
   </div>
@@ -235,8 +230,9 @@ export default {
           margin-top: 20px;
           margin-bottom: 10px;
           height: 35px;
+          padding: 5px;
           font-size: 18px;
-          font-weight: bold;
+          font-weight: 500;
         }
       }
 
