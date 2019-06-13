@@ -36,7 +36,7 @@ module.exports = {
     }
   }
   ],
-  actions: data => {
+  {% comment %} actions: data => {
     const name = '{{name}}'
     const actions = [{
       type: 'add',
@@ -48,7 +48,7 @@ module.exports = {
         script: data.blocks.includes('script'),
         style: data.blocks.includes('style')
       }
-    }]
+    }] {% endcomment %}
 
     return actions
   }

@@ -1,7 +1,10 @@
 <template>
   <div class="navbar">
     <div id="my-logo">
-      <img src="https://ws1.sinaimg.cn/large/e2e8c406gy1g3x2owic05j202m02ma9z.jpg">
+      <svg-icon
+        icon-class="read"
+        style="width: 180px; height: 40px"
+      />
     </div>
     <!-- <breadcrumb id="breadcrumb-container" class="breadcrumb-container"/> -->
 
@@ -130,7 +133,6 @@ export default {
 
   #my-logo {
     margin: 5px;
-    margin-left: 20px;
     img {
       width: 40px;
       height: 40px;

@@ -45,6 +45,11 @@ module.exports = {
         allowSingleLine: true
       }
     ],
+    "vue/html-closing-bracket-spacing": ["error", {
+      "startTag": "always" | "never",
+      "endTag": "always" | "never",
+      "selfClosingTag": "always" | "never"
+    }],
     camelcase: [
       0,
       {
@@ -59,6 +64,12 @@ module.exports = {
         after: true
       }
     ],
+    "no-trailing-spaces": {
+      "skipBlankLines": false,
+      "skipBlankLines": false,
+      "ignoreComments": true,
+      "ignoreComments": true
+    },
     "comma-style": [2, "last"],
     "constructor-super": 2,
     curly: [2, "multi-line"],

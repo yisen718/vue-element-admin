@@ -3,37 +3,87 @@
     <div class="login-card">
       <div class="block">
         <el-carousel height="625px">
-          <el-carousel-item v-for="item in 4" :key="item"></el-carousel-item>
+          <el-carousel-item
+            v-for="item in slides"
+            :key="item.link"
+          >
+            <a :href="item.link">
+              <div
+                class="slide"
+                :style="{backgroundImage:'url(' + item.background + ')'}"
+              ></div>
+            </a>
+          </el-carousel-item>
         </el-carousel>
       </div>
 
-      <div class="login-form">
+      <el-form
+        ref="loginForm"
+        :model="loginForm"
+        :rules="loginRules"
+        class="login-form"
+        auto-complete="on"
+        label-position="left"
+      >
         <div class="title">
-          <img src="https://www.bookln.cn/home/assets/img/common/new-logo.png" alt>
+          <img
+            src="https://www.bookln.cn/home/assets/img/common/new-logo.png"
+            alt
+          >
         </div>
 
         <div class="third-login">
           <div class="login-name">第三方登陆</div>
-          <svg-icon icon-class="wechat" />
-          <svg-icon icon-class="qq" />
+          <svg-icon icon-class="wechat"/>
+          <svg-icon icon-class="qq"/>
         </div>
 
         <div class="account-login">
-          <label class="form" for="username">用户名</label>
-          <input id="username" v-model="loginForm.username" type="text">
-          <div class="bottom-line" style="width: 0px;"></div>
-          <label class="form" for="password">密码</label>
-          <input id="password" v-model="loginForm.password" type="password">
-          <div class="bottom-line" style="width: 0px;"></div>
+          <label
+            class="username-label form"
+            for="username"
+          >用户名</label>
+          <input
+            id="username"
+            v-model="loginForm.username"
+            type="text"
+            @focus="focusUsername"
+            @blur="blurUsername"
+          >
+          <div
+            class="bottom-line"
+            style="width: 0px;"
+          ></div>
+          <label
+            class="password-label form"
+            for="password"
+          >密码</label>
+          <input
+            id="password"
+            v-model="loginForm.password"
+            type="password"
+            @focus="focusPassword"
+            @blur="blurPassword"
+            @keyup.enter.native="handleLogin"
+          >
+          <div
+            class="bottom-line"
+            style="width: 0px;"
+          ></div>
         </div>
-
         <div class="login">
-          <el-checkbox v-model="checked" class="remember">记住密码</el-checkbox>
-          <el-button class="login-button" type="primary">登陆</el-button>
+          <el-checkbox
+            v-model="checked"
+            class="remember"
+          >记住密码</el-checkbox>
+          <el-button
+            class="login-button"
+            type="primary"
+            @click.native.prevent="handleLogin"
+          >登陆</el-button>
         </div>
-
         <div class="forgot">忘记密码?</div>
-      </div>
+      </el-form>
     </div>
   </div>
 </template>
@@ -65,6 +115,21 @@ export default {
         username: null,
         password: null
       },
+
+      slides: [
+        {
+          link: 'https://www.baidu.com?search=1',
+          background: 'http://cdn10.bookln.cn/182480_2613482FA300616ECF02879AB8BFF21F.jpg'
+        },
+        {
+          link: 'https://www.baidu.com?s',
+          background: 'http://cdn10.bookln.cn/182480_875F321D3D5E138130870D8A5C4EF421.jpg'
+        },
+        {
+          link: 'https://www.baidu.com',
+          background: 'http://cdn10.bookln.cn/1815649_960215BDF7C74FABDBB5001E35715064.png'
+        }
+      ],
 
       checked: false,
 
@@ -104,18 +169,6 @@ export default {
   },
 
   methods: {
-    checkCapslock({ shiftKey, key } = {}) {
-      if (key && key.length === 1) {
-        if (shiftKey && (key >= 'a' && key <= 'z') || !shiftKey && (key >= 'A' && key <= 'Z')) {
-          this.capsTooltip = true
-        } else {
-          this.capsTooltip = false
-        }
-      }
-      if (key === 'CapsLock' && this.capsTooltip === true) {
-        this.capsTooltip = false
-      }
-    },
 
     showPwd() {
       if (this.passwordType === 'password') {
@@ -154,7 +207,36 @@ export default {
         }
         return acc
       }, {})
+    },
+
+    focusUsername() {
+      const usernameLabel = this.$el.getElementsByClassName('username-label')[0]
+      usernameLabel.style.animation = 'input-focus 0.2s'
+      usernameLabel.style.top = '5px'
+    },
+
+    blurUsername() {
+      const usernameLabel = this.$el.getElementsByClassName('username-label')[0]
+      if (this.loginForm.username === null || this.loginForm.username === '') {
+        usernameLabel.style.animation = 'input-blur 0.2s'
+        usernameLabel.style.top = '30px'
+      }
+    },
+
+    focusPassword() {
+      const passwordLabel = this.$el.getElementsByClassName('password-label')[0]
+      passwordLabel.style.animation = 'input-focus 0.2s'
+      passwordLabel.style.top = '5px'
+    },
+
+    blurPassword() {
+      const passwordLabel = this.$el.getElementsByClassName('password-label')[0]
+      if (this.loginForm.password === null || this.loginForm.password === '') {
+        passwordLabel.style.animation = 'input-blur 0.2s'
+        passwordLabel.style.top = '30px'
+      }
     }
+
     // afterQRScan() {
     //   if (e.key === 'x-admin-oauth-code') {
     //     const code = getQueryObject(e.newValue)
@@ -273,6 +355,13 @@ export default {
   }
 }
 
+.slide {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 input {
   font-size: 16px !important;
   font-family: SourceHanSansCN-Regular;
@@ -293,6 +382,24 @@ input:focus {
   // border-bottom: 1px solid #1890ff !important;
 }
 
+@keyframes input-focus {
+  from {
+    top: 30px;
+  }
+  to {
+    top: 5px;
+  }
+}
+
+@keyframes input-blur {
+  from {
+    top: 5px;
+  }
+  to {
+    top: 30px;
+  }
+}
+
 .bottom-line {
   width: 250px;
   position: relative;
@@ -306,11 +413,16 @@ input:focus {
   font-size: 13px;
   position: relative;
   left: 20px;
-  top: 27px;
+  top: 30px;
   color: #999;
   line-height: 21px;
   font-weight: 400;
   margin-left: 0;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
 }
 
 .el-carousel__item h3 {
