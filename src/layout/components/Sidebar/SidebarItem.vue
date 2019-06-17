@@ -122,4 +122,12 @@ export default {
   font-weight: bold;
   box-shadow: 2px 1px 2px 1px #f2f2f2;
 }
+.menu-wrapper {
+  border-style: solid dotted;
+  border-bottom-style: none;
+  /* text-shadow: 0 0 black; */
+  border-color: lightgray;
+  /* box-shadow: 1px 1px 3px 2px #6a6a6a1f; */
+  border-width: thin;
+}
 </style>

@@ -117,7 +117,7 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  height: 50px;
+  height: 60px;
   overflow: hidden;
   position: fixed;
   width: 100%;
@@ -132,7 +132,7 @@ export default {
   flex-wrap: nowrap;
 
   #my-logo {
-    margin: 5px;
+    margin: 10px;
     img {
       width: 40px;
       height: 40px;
@@ -165,6 +165,7 @@ export default {
   .right-menu {
     height: 100%;
     line-height: 50px;
+    margin: 5px;
     &:focus {
       outline: none;
     }
