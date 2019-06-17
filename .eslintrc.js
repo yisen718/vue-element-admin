@@ -208,8 +208,8 @@ module.exports = {
         "normal": "allow",
         "component": "allow"
       },
-      "svg": "never",
-      "math": "always"
+      "svg": "allow",
+      "math": "allow"
     }],
     "no-useless-call": 2,
     "no-useless-computed-key": 2,

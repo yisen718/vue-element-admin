@@ -3,15 +3,9 @@
     <div class="login-card">
       <div class="block">
         <el-carousel height="625px">
-          <el-carousel-item
-            v-for="item in slides"
-            :key="item.link"
-          >
+          <el-carousel-item v-for="item in slides" :key="item.link">
             <a :href="item.link">
-              <div
-                class="slide"
-                :style="{backgroundImage:'url(' + item.background + ')'}"
-              ></div>
+              <div class="slide" :style="{backgroundImage:'url(' + item.background + ')'}"></div>
             </a>
           </el-carousel-item>
         </el-carousel>
@@ -26,10 +20,7 @@
         label-position="left"
       >
         <div class="title">
-          <img
-            src="https://www.bookln.cn/home/assets/img/common/new-logo.png"
-            alt
-          >
+          <img src="https://www.bookln.cn/home/assets/img/common/new-logo.png" alt>
         </div>
 
         <div class="third-login">
@@ -39,10 +30,7 @@
         </div>
 
         <div class="account-login">
-          <label
-            class="username-label form"
-            for="username"
-          >用户名</label>
+          <label class="username-label form" for="username">用户名</label>
           <input
             id="username"
             v-model="loginForm.username"
@@ -50,14 +38,8 @@
             @focus="focusUsername"
             @blur="blurUsername"
           >
-          <div
-            class="bottom-line"
-            style="width: 0px;"
-          ></div>
-          <label
-            class="password-label form"
-            for="password"
-          >密码</label>
+          <div class="bottom-line" style="width: 0px;"></div>
+          <label class="password-label form" for="password">密码</label>
           <input
             id="password"
             v-model="loginForm.password"
@@ -66,21 +48,11 @@
             @blur="blurPassword"
             @keyup.enter.native="handleLogin"
           >
-          <div
-            class="bottom-line"
-            style="width: 0px;"
-          ></div>
+          <div class="bottom-line" style="width: 0px;"></div>
         </div>
         <div class="login">
-          <el-checkbox
-            v-model="checked"
-            class="remember"
-          >记住密码</el-checkbox>
-          <el-button
-            class="login-button"
-            type="primary"
-            @click.native.prevent="handleLogin"
-          >登陆</el-button>
+          <el-checkbox v-model="checked" class="remember">记住密码</el-checkbox>
+          <el-button class="login-button" type="primary" @click.native.prevent="handleLogin">登陆</el-button>
         </div>
         <div class="forgot">忘记密码?</div>
       </el-form>
@@ -380,7 +352,7 @@ input {
 }
 
 input:focus {
-  // border-bottom: 1px solid #1890ff !important;
+  border-bottom: 1px solid #1890ff !important;
 }
 
 @keyframes input-focus {

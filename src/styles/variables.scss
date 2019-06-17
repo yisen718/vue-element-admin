@@ -11,13 +11,14 @@ $panGreen: #30b08f;
 // sidebar
 $menuText: gray;
 $menuActiveText: #409eff;
+$menuHoverText: #409eff;
 $subMenuActiveText: #409eff; // https://github.com/ElemeFE/element/issues/12951
 
 $menuBg: white;
-$menuHover: #f9f9f9;
+$menuHover: #e8f4ff;
 
 $subMenuBg: #fbfbfb;
-$subMenuHover: #e5e5e5;
+$subMenuHover: #e4f2ff;
 
 $sideBarWidth: 210px;
 $shadowColor: #f5f3f5;
@@ -27,6 +28,7 @@ $shadowColor: #f5f3f5;
 :export {
   menuText: $menuText;
   menuActiveText: $menuActiveText;
+  menuHoverText: $menuHoverText;
   subMenuActiveText: $subMenuActiveText;
   menuBg: $menuBg;
   menuHover: $menuHover;
