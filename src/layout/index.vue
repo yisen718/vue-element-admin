@@ -1,15 +1,15 @@
 <template>
   <div :class="classObj" class="app-wrapper">
-    <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside"/>
-    <navbar/>
-    <sidebar class="sidebar-container"/>
+    <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
+    <navbar />
+    <sidebar class="sidebar-container" />
     <div :class="{hasTagsView:needTagsView}" class="body-container">
       <div :class="{'fixed-header':fixedHeader}">
-        <tags-view v-if="needTagsView"/>
+        <tags-view v-if="needTagsView" />
       </div>
-      <app-main/>
+      <app-main />
       <right-panel v-if="showSettings">
-        <settings/>
+        <settings />
       </right-panel>
     </div>
   </div>
@@ -17,9 +17,17 @@
 
 <script>
 import RightPanel from '@/components/RightPanel'
-import { AppMain, Navbar, Settings, Sidebar, TagsView } from './components'
+import {
+  AppMain,
+  Navbar,
+  Settings,
+  Sidebar,
+  TagsView
+} from './components'
 import ResizeMixin from './mixin/ResizeHandler'
-import { mapState } from 'vuex'
+import {
+  mapState
+} from 'vuex'
 
 export default {
   name: 'Layout',
@@ -51,7 +59,9 @@ export default {
   },
   methods: {
     handleClickOutside() {
-      this.$store.dispatch('app/closeSideBar', { withoutAnimation: false })
+      this.$store.dispatch('app/closeSideBar', {
+        withoutAnimation: false
+      })
     }
   }
 }
@@ -79,7 +89,7 @@ export default {
   transition: margin-left 0.28s;
   margin-left: 210px;
   position: relative;
-  top: 50px;
+  top: 60px;
 }
 
 .drawer-bg {

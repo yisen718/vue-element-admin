@@ -242,7 +242,7 @@ export default {
   height: 100%;
 
   .login-card {
-    width: 60%;
+    width: 960px;
     height: 625px;
     display: grid;
     grid-template-rows: 100%;
